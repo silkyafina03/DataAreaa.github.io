@@ -8,30 +8,24 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
-     * 
-     * @return void
      */
     public function up(): void
     {
         Schema::create('admin', function (Blueprint $table) {
-            $table->varchar('kode_area');
-            $table->varchar('nama_area');
+            $table->string('kode_area')->primary(); // Mendefinisikan kolom 'kode_area' sebagai primary key
+            $table->string('nama_area');
             $table->text('deskripsi');
-            $table->varchar('wilayah');
-            $table->varchar('kota');
-            $table->varchar('provinsi');
-            $table->timestamps('created_at');
-            $table->timestamps('update_at');
-        });
+            $table->string('kota');
+            $table->string('provinsi');
+            $table->timestamps();
+        });        
     }
 
     /**
      * Reverse the migrations.
-     * 
-     * @return void
      */
     public function down(): void
     {
-        Schema::dropIfExists('admin');
+        //
     }
 };
