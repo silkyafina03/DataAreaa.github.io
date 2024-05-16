@@ -11,8 +11,11 @@ use App\Http\Controllers\AdminController;
 
 Route::get('/', [SessionController::class, 'index']);
 Route::get('/Admin', [AdminController::class, 'index']);
+Route::get('Admin/cetak', [AdminController::class, 'cetak'])->name('Admin.cetak');
 Route::match(['get','post'],'Admin/create', [AdminController::class,'create']);
-Route::get('Admin/{id}',[AdminController::class,'detail'])->where('id','[0-9]+');
+Route::get('Admin/detail/{id}',[AdminController::class,'detail'])->name('Admin.detail');
+Route::put('Admin/{id}', [AdminController::class,'update']);
+
 
 Route::resource('Admin', AdminController::class)->middleware('islogin');
 
