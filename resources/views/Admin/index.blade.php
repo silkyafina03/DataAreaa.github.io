@@ -31,7 +31,7 @@
                     <td>{{$item->provinsi}}</td>
                     <td> 
                         
-                        <a class="btn btn-info btn-sm" href="{{route('detail', $item->kode_area)}}"><i class="fa-solid fa-circle-info"></i></a>
+                        <a class="btn btn-info btn-sm" href="{{route('Admin.show', $item->kode_area)}}"><i class="fa-solid fa-circle-info"></i></a>
 
                         <a class="btn btn-warning btn-sm" href="{{url('/Admin/'.$item->kode_area.'/edit')}}"><i class="fa-solid fa-pencil"></i></a>
 
