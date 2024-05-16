@@ -2,7 +2,6 @@
 
 @section('konten')
 <div>
-    <a href="/Admin" class="btn btn-secondary"> KEMBALI </a>
     <h1>{{$data->kode_area}}</h1>
     <p>
         <b>Nama Area: </b>{{$data->nama_area}}
@@ -11,7 +10,7 @@
         <b>Deskripsi: </b>{{$data->deskripsi}}
     </p>
     <p>
-        <b>Wilayah: </b>{{$data->wilayah}}
+        <b>Wilayah: </b>{{$wil->nama_wilayah}}
     </p>
     <p>
         <b>Kota: </b>{{$data->kota}}
@@ -20,4 +19,8 @@
         <b>Provinsi: </b>{{$data->provinsi}}
     </p>
    </div>
+   <div class="mb-3">
+    <a href="/Admin" class="btn btn-secondary"> KEMBALI </a>
+
+</div>
 @endsection
