@@ -18,6 +18,7 @@
 
         <table class="static" align="center" rules="all" border="1px" style="width: 95%;">
             <tr>
+                <th>No</th>
                 <th>Kode Area</th>
                 <th>Nama Area</th>
                 <th>Deskripsi</th>
@@ -25,8 +26,12 @@
                 <th>Kota</th>
                 <th>Provinsi</th>
             </tr>
+            @php
+                $counter = 1;
+            @endphp
             @foreach($cetak as $item)
                 <tr>
+                    <td>{{ $counter }}</td>
                     <td>{{$item->kode_area}}</td>
                     <td>{{$item->nama_area}}</td>
                     <td>{{$item->deskripsi}}</td>
@@ -34,11 +39,14 @@
                     <td>{{$item->kota}}</td>
                     <td>{{$item->provinsi}}</td>
                 </tr>
+                @php
+                    $counter++;
+                @endphp
             @endforeach
         </table>
     </div>
     <script type="text/javascript">
-    window.print();
+        window.print();
     </script>
 </body>
 </html>
